@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "366183323454",
+    "firebase_url": "https://iot-cafe-security-default-rtdb.firebaseio.com",
+    "project_id": "iot-cafe-security",
+    "storage_bucket": "iot-cafe-security.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:366183323454:android:f95b55ebe79ae2d2353e6f",
+        "android_client_info": {
+          "package_name": "com.housesecurity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "366183323454-oihlfflkgcagpcvu8k9dmjpe3hfmaq6k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNyHu36PTv9YrKtylNv2CbPEI2ttRn9Go"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "366183323454-oihlfflkgcagpcvu8k9dmjpe3hfmaq6k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
