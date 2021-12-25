@@ -7,31 +7,40 @@ const Home = ({navigation}) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.TextHeader}>Hello...</Text>
-      <View style={styles.Content}>
-        <View style={styles.CardTemp}>
-          <Image source={require('../../Assets/temp.png')} style={styles.Img} />
-          <View>
-            <Text style={styles.TextValue}>25°</Text>
-            <Text>Temperature</Text>
-          </View>
-        </View>
-        <View style={styles.DeviceCondition}>
-          <Text>Device :</Text>
-          <Text style={styles.TextDevice(isDevice)}>
-            {isDevice ? 'active' : 'off'}
-          </Text>
-        </View>
-        <TouchableOpacity
-          style={styles.Btn}
-          onPress={() => navigation.navigate('Monitoring')}>
+      <Text style={styles.textheader}>Status</Text>
+      <View style={styles.content}>
+        <View style={styles.modulesection}>
           <Image
-            source={require('../../Assets/cam.png')}
-            style={styles.ImgBtn}
+            source={require('../../Assets/micro.png')}
+            style={styles.imgmodule}
           />
-          <Text style={styles.TextBtn}>Start Monitoring</Text>
-        </TouchableOpacity>
+          <Text>Module</Text>
+        </View>
+        <View style={styles.tempsection}>
+          <Image
+            source={require('../../Assets/temp.png')}
+            style={styles.imgtemp}
+          />
+          <Text>Temperature</Text>
+          <Text style={styles.textvalue}>25°C</Text>
+        </View>
       </View>
+      <View style={styles.smokesection}>
+        <View style={styles.textsection}>
+          <Text style={styles.textsmoke}>Smoke Sensor</Text>
+          <Text>Value</Text>
+        </View>
+        <View style={styles.imgsection}>
+          <Image
+            source={require('../../Assets/smoke.png')}
+            style={styles.imgsmoke}
+          />
+        </View>
+      </View>
+      <Image
+        source={require('../../Assets/backImg.png')}
+        style={styles.backimg}
+      />
     </SafeAreaView>
   );
 };
