@@ -4,6 +4,7 @@ import {Home, Monitoring, About} from '../../Scenes';
 import {StyleSheet, View, TouchableOpacity, Dimensions} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 const {width} = Dimensions.get('window');
+import {RFValue} from 'react-native-responsive-fontsize';
 
 const Tab = createBottomTabNavigator();
 
@@ -49,13 +50,13 @@ const MyTabBar = ({state, descriptors, navigation}) => {
                 {isFocused ? (
                   <MaterialCommunityIcons
                     name="camera"
-                    size={30}
+                    size={RFValue(40)}
                     color={color}
                   />
                 ) : (
                   <MaterialCommunityIcons
                     name="camera"
-                    size={30}
+                    size={RFValue(40)}
                     color={color}
                   />
                 )}
@@ -66,14 +67,14 @@ const MyTabBar = ({state, descriptors, navigation}) => {
                 {isFocused ? (
                   <MaterialCommunityIcons
                     name="shield-home"
-                    size={30}
+                    size={RFValue(40)}
                     color={'#515151'}
                   />
                 ) : (
                   <MaterialCommunityIcons
                     name="shield-home"
                     color={'#515151'}
-                    size={30}
+                    size={RFValue(40)}
                   />
                 )}
               </View>
@@ -83,13 +84,13 @@ const MyTabBar = ({state, descriptors, navigation}) => {
                 {isFocused ? (
                   <MaterialCommunityIcons
                     name="information"
-                    size={30}
+                    size={RFValue(40)}
                     color={color}
                   />
                 ) : (
                   <MaterialCommunityIcons
                     name="information"
-                    size={30}
+                    size={RFValue(40)}
                     color={color}
                   />
                 )}
@@ -106,7 +107,7 @@ export default TabNavigator;
 
 const styles = StyleSheet.create({
   BottomTab: {
-    height: width * 0.17,
+    height: width * 0.15,
     backgroundColor: '#764D34',
     alignItems: 'center',
     flexDirection: 'row',
@@ -117,7 +118,7 @@ const styles = StyleSheet.create({
     bottom: width * 0.07,
     width: width * 0.17,
     height: width * 0.17,
-    borderRadius: 30,
+    borderRadius: 100,
     backgroundColor: '#F4DFB9',
     alignItems: 'center',
     justifyContent: 'center',

@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
-import {View, Text, SafeAreaView, Image, TouchableOpacity} from 'react-native';
+import {View, Text, SafeAreaView, Image, Switch} from 'react-native';
 import styles from './styles';
+import useCafe from '../Monitoring/useCafe';
 
-const Home = ({navigation}) => {
-  const [isDevice, setIsdevice] = useState(false);
+const Home = () => {
+  const {status, temperature, gas_value, handleUpdatestatus} = useCafe();
 
   return (
     <SafeAreaView style={styles.container}>
@@ -14,7 +15,16 @@ const Home = ({navigation}) => {
             source={require('../../Assets/micro.png')}
             style={styles.imgmodule}
           />
-          <Text>Module</Text>
+          <Text style={styles.textmodule(status)}>
+            {status ? 'Module Connected' : 'Module Not Connected'}
+          </Text>
+          <Switch
+            trackColor={{false: '#767577', true: '#767577'}}
+            thumbColor={status ? '#764D34' : '#f4f3f4'}
+            ios_backgroundColor="#3e3e3e"
+            onValueChange={handleUpdatestatus}
+            value={status}
+          />
         </View>
         <View style={styles.tempsection}>
           <Image
@@ -22,13 +32,13 @@ const Home = ({navigation}) => {
             style={styles.imgtemp}
           />
           <Text>Temperature</Text>
-          <Text style={styles.textvalue}>25°C</Text>
+          <Text style={styles.textvalue}>{temperature}°C</Text>
         </View>
       </View>
       <View style={styles.smokesection}>
         <View style={styles.textsection}>
           <Text style={styles.textsmoke}>Smoke Sensor</Text>
-          <Text>Value</Text>
+          <Text>{gas_value}</Text>
         </View>
         <View style={styles.imgsection}>
           <Image
@@ -37,10 +47,12 @@ const Home = ({navigation}) => {
           />
         </View>
       </View>
-      <Image
-        source={require('../../Assets/backImg.png')}
-        style={styles.backimg}
-      />
+      <View style={styles.backimgsection}>
+        <Image
+          source={require('../../Assets/backImg.png')}
+          style={styles.backimg}
+        />
+      </View>
     </SafeAreaView>
   );
 };

@@ -17,7 +17,6 @@ export default StyleSheet.create({
     flexDirection: 'row',
   },
   CardTemp: {
-    // backgroundColor: 'red',
     marginVertical: width * 0.1,
     width: width * 0.7,
     height: width * 0.19,
@@ -144,8 +143,19 @@ export default StyleSheet.create({
     fontWeight: 'bold',
     fontSize: RFValue(20),
   },
-  backimg: {
+  backimgsection: {
     width: width,
-    height: width * 0.98
-  }
+    height: width * 0.9,
+    backgroundColor: 'white',
+    alignItems: 'center',
+    // justifyContent: 'center'
+  },
+  backimg: {
+    width: width * 0.7,
+    height: width * 0.7,
+  },
+  textmodule: status => ({
+    marginVertical: width * 0.02,
+    color: status ? 'green' : '#515151',
+  }),
 });
