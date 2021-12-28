@@ -16,7 +16,7 @@ const Home = () => {
             style={styles.imgmodule}
           />
           <Text style={styles.textmodule(status)}>
-            {status ? 'Module Connected' : 'Module Not Connected'}
+            {status ? 'esp32-cam Connected' : 'Disconnect'}
           </Text>
           <Switch
             trackColor={{false: '#767577', true: '#767577'}}
@@ -32,7 +32,7 @@ const Home = () => {
             style={styles.imgtemp}
           />
           <Text>Temperature</Text>
-          <Text style={styles.textvalue}>{temperature}°C</Text>
+          <Text style={styles.textvalue}>{temperature.toFixed(1)}°C</Text>
         </View>
       </View>
       <View style={styles.smokesection}>
