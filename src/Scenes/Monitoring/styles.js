@@ -28,6 +28,16 @@ export default StyleSheet.create({
     width: width * 0.8,
     borderRadius: 20,
   },
+  collapseheadertrue: {
+    height: width * 0.14,
+    backgroundColor: '#764D34',
+    alignItems: 'center',
+    paddingHorizontal: width * 0.04,
+    flexDirection: 'row',
+    width: width * 0.8,
+    borderTopRightRadius: 20,
+    borderTopLeftRadius: 20,
+  },
   textsection: {
     flex: 1,
   },
@@ -40,14 +50,9 @@ export default StyleSheet.create({
     color: 'white',
     fontSize: RFValue(10),
   },
-  imgsection: {
-    marginTop: width * 0.02,
-  },
   img: {
     width: width * 0.8,
     height: width * 0.5,
-    borderTopLeftRadius: 20,
-    borderTopRightRadius: 20,
   },
   infosection: {
     // justifyContent: 'center',

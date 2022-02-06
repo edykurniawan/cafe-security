@@ -15,6 +15,7 @@ export default StyleSheet.create({
   },
   content: {
     flexDirection: 'row',
+    justifyContent: 'center',
   },
   CardTemp: {
     marginVertical: width * 0.1,
@@ -69,7 +70,7 @@ export default StyleSheet.create({
     height: width * 0.4,
     backgroundColor: 'white',
     borderRadius: 20,
-    marginHorizontal: width * 0.07,
+    marginHorizontal: width * 0.01,
     alignItems: 'center',
     shadowColor: '#000',
     shadowOffset: {
@@ -89,6 +90,7 @@ export default StyleSheet.create({
     width: width * 0.4,
     height: width * 0.4,
     backgroundColor: 'white',
+    marginHorizontal: width * 0.01,
     borderRadius: 20,
     alignItems: 'center',
     shadowColor: '#000',
@@ -110,10 +112,10 @@ export default StyleSheet.create({
     fontSize: RFValue(20),
   },
   smokesection: {
-    width: width * 0.8,
-    height: width * 0.2,
+    width: width * 0.4,
+    height: width * 0.1,
+    marginHorizontal: width * 0.01,
     backgroundColor: 'white',
-    marginHorizontal: width * 0.1,
     marginVertical: width * 0.06,
     borderRadius: 20,
     shadowColor: '#000',
@@ -130,9 +132,9 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
   imgsmoke: {
-    width: width * 0.12,
-    height: width * 0.12,
-    marginRight: width * 0.1,
+    width: width * 0.07,
+    height: width * 0.07,
+    marginRight: width * 0.06,
   },
   textsection: {
     justifyContent: 'center',
@@ -141,7 +143,10 @@ export default StyleSheet.create({
   },
   textsmoke: {
     fontWeight: 'bold',
-    fontSize: RFValue(20),
+    fontSize: RFValue(10),
+  },
+  valuesmoke: {
+    fontSize: RFValue(9),
   },
   backimgsection: {
     width: width,
@@ -158,4 +163,28 @@ export default StyleSheet.create({
     marginVertical: width * 0.02,
     color: status ? 'green' : '#515151',
   }),
+  bottomsection: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+  personsection: {
+    width: width * 0.4,
+    height: width * 0.1,
+    marginHorizontal: width * 0.01,
+    backgroundColor: 'white',
+    marginVertical: width * 0.06,
+    borderRadius: 20,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 2.22,
+    elevation: 2,
+    flexDirection: 'row',
+  },
+  iconperson: {
+    marginRight: width * 0.06,
+  },
 });

@@ -11,17 +11,19 @@ const useCafe = () => {
   const [status, setStatus] = useState(false);
   const [temperature, setTemperature] = useState(30);
   const [data, setData] = useState([]);
+  const [person, setPerson] = useState(0);
 
   useEffect(() => {
     handleGetstatus();
     handleGetsmoke();
     handleGettemperature();
     handlegGetphoto();
+    handleGetPerson();
   }, []);
 
   const handlegGetphoto = () => {
     axios
-      .get('https://esp32server.herokuapp.com/api/photos?date=2021-12-27')
+      .get('https://esp32server.herokuapp.com/api/photos?date=2021-12-30')
       .then(function (res) {
         // console.log(res.data);
         setData(res.data);
@@ -29,6 +31,12 @@ const useCafe = () => {
       .catch(function (error) {
         console.log(error);
       });
+  };
+
+  const handleGetPerson = () => {
+    database.ref('/data/person').on('value', snapshot => {
+      setPerson(snapshot.val());
+    });
   };
 
   const handleGetsmoke = () => {
@@ -59,7 +67,7 @@ const useCafe = () => {
     });
   };
 
-  return {gas_value, status, temperature, handleUpdatestatus, data};
+  return {gas_value, status, temperature, handleUpdatestatus, data, person};
 };
 
 export default useCafe;

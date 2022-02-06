@@ -2,9 +2,11 @@ import React, {useState} from 'react';
 import {View, Text, SafeAreaView, Image, Switch} from 'react-native';
 import styles from './styles';
 import useCafe from '../Monitoring/useCafe';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const Home = () => {
-  const {status, temperature, gas_value, handleUpdatestatus} = useCafe();
+  const {status, temperature, gas_value, handleUpdatestatus, person} =
+    useCafe();
 
   return (
     <SafeAreaView style={styles.container}>
@@ -35,18 +37,30 @@ const Home = () => {
           <Text style={styles.textvalue}>{temperature.toFixed(1)}°C</Text>
         </View>
       </View>
-      <View style={styles.smokesection}>
-        <View style={styles.textsection}>
-          <Text style={styles.textsmoke}>Smoke Sensor</Text>
-          <Text>{gas_value}</Text>
+      <View style={styles.bottomsection}>
+        <View style={styles.personsection}>
+          <View style={styles.textsection}>
+            <Text style={styles.textsmoke}>Person</Text>
+            <Text style={styles.valuesmoke}>{person}</Text>
+          </View>
+          <View style={styles.imgsection}>
+            <Ionicons name="person" size={20} style={styles.iconperson} />
+          </View>
         </View>
-        <View style={styles.imgsection}>
-          <Image
-            source={require('../../Assets/smoke.png')}
-            style={styles.imgsmoke}
-          />
+        <View style={styles.smokesection}>
+          <View style={styles.textsection}>
+            <Text style={styles.textsmoke}>Smoke Sensor</Text>
+            <Text style={styles.valuesmoke}>{gas_value}</Text>
+          </View>
+          <View style={styles.imgsection}>
+            <Image
+              source={require('../../Assets/smoke.png')}
+              style={styles.imgsmoke}
+            />
+          </View>
         </View>
       </View>
+
       <View style={styles.backimgsection}>
         <Image
           source={require('../../Assets/backImg.png')}
