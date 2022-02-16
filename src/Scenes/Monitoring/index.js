@@ -6,6 +6,7 @@ import {
   Image,
   FlatList,
   Button,
+  ScrollView,
 } from 'react-native';
 import styles from './styles';
 import useCafe from './useCafe';
@@ -58,7 +59,7 @@ const MonitoringItem = props => {
         </CollapseHeader>
         <CollapseBody>
           <View style={styles.imgsection}>
-            <Image source={{uri: props.photo}} style={styles.img} />
+            <Image source={{uri: props.img}} style={styles.img} />
           </View>
           <View style={styles.desc}>
             <View style={styles.infosection}>
@@ -92,9 +93,9 @@ const MonitoringItem = props => {
 
 const Monitoring = () => {
   const {data} = useCafe();
-
+  console.log(data);
   return (
-    <View>
+    <ScrollView>
       <Text style={styles.textheader}>Capture History</Text>
       <View style={styles.contensection}>
         <FlatList
@@ -103,7 +104,7 @@ const Monitoring = () => {
           renderItem={({item}) => <MonitoringItem img={item.photo} />}
         />
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
