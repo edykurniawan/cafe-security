@@ -27,8 +27,8 @@ const useCafe = () => {
       .then(function (res) {
         // console.log(res.data);
         const data = res.data;
-        setData(res.data);
-        console.log(data);
+        const fixdata = data.reverse();
+        setData(fixdata);
       })
       .catch(function (error) {
         console.log(error);

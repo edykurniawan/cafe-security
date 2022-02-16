@@ -1,5 +1,17 @@
 import React, {useState} from 'react';
+<<<<<<< HEAD
 import {View, Text, TouchableOpacity, Image, FlatList} from 'react-native';
+=======
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Image,
+  FlatList,
+  Button,
+  ScrollView,
+} from 'react-native';
+>>>>>>> 1a0de415ab4060b2a66be37e2730413e9535e491
 import styles from './styles';
 import useCafe from './useCafe';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -19,12 +31,19 @@ const Item = props => {
             <Text style={styles.textcollapse}>Motion Detected</Text>
             <Text style={styles.texttime}>2 hours ago</Text>
           </View>
+<<<<<<< HEAD
           <View>
             <MaterialCommunityIcons
               name="chevron-down"
               size={40}
               color={'white'}
             />
+=======
+        </CollapseHeader>
+        <CollapseBody>
+          <View style={styles.imgsection}>
+            <Image source={{uri: props.img}} style={styles.img} />
+>>>>>>> 1a0de415ab4060b2a66be37e2730413e9535e491
           </View>
         </View>
       </CollapseHeader>
@@ -61,9 +80,9 @@ const Item = props => {
 
 const Monitoring = () => {
   const {data} = useCafe();
-
+  console.log(data);
   return (
-    <View>
+    <ScrollView>
       <Text style={styles.textheader}>Capture History</Text>
       <View style={styles.contensection}>
         <FlatList
@@ -72,7 +91,7 @@ const Monitoring = () => {
           renderItem={({item}) => <Item img={item.photo} />}
         />
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
