@@ -23,12 +23,13 @@ const useCafe = () => {
 
   const handlegGetphoto = () => {
     axios
-      .get('https://esp32server.herokuapp.com/api/photos?date=2021-12-30')
+      .get('https://esp32server.herokuapp.com/api/photos?date=2022-02-16')
       .then(function (res) {
         // console.log(res.data);
         const data = res.data;
-        setData(res.data);
-        console.log(data);
+        const fixdata = data.reverse();
+        setData(fixdata);
+        console.log(fixdata);
       })
       .catch(function (error) {
         console.log(error);
