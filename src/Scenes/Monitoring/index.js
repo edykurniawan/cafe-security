@@ -16,6 +16,18 @@ import {
   CollapseBody,
 } from 'accordion-collapse-react-native';
 
+const data = [
+  {
+    number: 'num1',
+  },
+  {
+    number: 'num2',
+  },
+  {
+    number: 'num2',
+  },
+];
+
 const MonitoringItem = props => {
   const {temperature} = useCafe();
   const [expanded, setExpanded] = useState(false);
@@ -46,10 +58,7 @@ const MonitoringItem = props => {
         </CollapseHeader>
         <CollapseBody>
           <View style={styles.imgsection}>
-            <Image
-              source={require('../../Assets/cctv.png')}
-              style={styles.img}
-            />
+            <Image source={{uri: props.photo}} style={styles.img} />
           </View>
           <View style={styles.desc}>
             <View style={styles.infosection}>
@@ -88,12 +97,11 @@ const Monitoring = () => {
     <View>
       <Text style={styles.textheader}>Capture History</Text>
       <View style={styles.contensection}>
-        <MonitoringItem />
-        {/* <FlatList
+        <FlatList
           data={data}
           keyExtractor={(item, index) => index.toString()}
           renderItem={({item}) => <MonitoringItem img={item.photo} />}
-        /> */}
+        />
       </View>
     </View>
   );
