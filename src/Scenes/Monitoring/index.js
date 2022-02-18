@@ -1,7 +1,4 @@
 import React, {useState} from 'react';
-<<<<<<< HEAD
-import {View, Text, TouchableOpacity, Image, FlatList} from 'react-native';
-=======
 import {
   View,
   Text,
@@ -11,7 +8,6 @@ import {
   Button,
   ScrollView,
 } from 'react-native';
->>>>>>> 1a0de415ab4060b2a66be37e2730413e9535e491
 import styles from './styles';
 import useCafe from './useCafe';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -21,29 +17,35 @@ import {
   CollapseBody,
 } from 'accordion-collapse-react-native';
 
-const Item = props => {
+const MonitoringItem = props => {
   const {temperature} = useCafe();
+  const [isCollapse, setIsCollapse] = useState(false);
+  const handleCollapse = () => {
+    setIsCollapse(!isCollapse);
+  };
   return (
-    <Collapse style={styles.collapsecontainer}>
+    <Collapse
+      style={styles.collapsecontainer}
+      isExpanded={isCollapse}
+      onToggle={handleCollapse}>
       <CollapseHeader>
-        <View style={styles.collapseheader}>
+        {console.log(isCollapse)}
+        <View
+          style={
+            isCollapse === true
+              ? styles.collapseheader2
+              : styles.collapseheader1
+          }>
           <View style={styles.textsection}>
             <Text style={styles.textcollapse}>Motion Detected</Text>
             <Text style={styles.texttime}>2 hours ago</Text>
           </View>
-<<<<<<< HEAD
           <View>
             <MaterialCommunityIcons
               name="chevron-down"
               size={40}
               color={'white'}
             />
-=======
-        </CollapseHeader>
-        <CollapseBody>
-          <View style={styles.imgsection}>
-            <Image source={{uri: props.img}} style={styles.img} />
->>>>>>> 1a0de415ab4060b2a66be37e2730413e9535e491
           </View>
         </View>
       </CollapseHeader>
@@ -88,11 +90,10 @@ const Monitoring = () => {
         <FlatList
           data={data}
           keyExtractor={(item, index) => index.toString()}
-          renderItem={({item}) => <Item img={item.photo} />}
+          renderItem={({item}) => <MonitoringItem img={item.photo} />}
         />
       </View>
     </ScrollView>
   );
 };
-
 export default Monitoring;

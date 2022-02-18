@@ -19,7 +19,7 @@ export default StyleSheet.create({
     color: 'black',
     fontWeight: 'bold',
   },
-  collapseheader: {
+  collapseheader1: {
     height: width * 0.14,
     backgroundColor: '#764D34',
     alignItems: 'center',
@@ -27,6 +27,16 @@ export default StyleSheet.create({
     flexDirection: 'row',
     width: width * 0.8,
     borderRadius: 20,
+  },
+  collapseheader2: {
+    height: width * 0.14,
+    backgroundColor: '#764D34',
+    alignItems: 'center',
+    paddingHorizontal: width * 0.04,
+    flexDirection: 'row',
+    width: width * 0.8,
+    borderTopEndRadius: 20,
+    borderTopStartRadius: 20,
   },
   collapseheadertrue: {
     height: width * 0.14,
